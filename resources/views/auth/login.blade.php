@@ -2,12 +2,24 @@
     <div class="container">
         <div class="row">
             <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                @if (session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script>
+                        $(document).ready(function() {
+                            // Скрываем элемент с ошибкой через 5 секунд
+                            $('#error-alert').delay(5000).fadeOut('slow');
+                        });
+                    </script>
+                @endif
                 <div class="panel border bg-white">
                     <div class="panel-heading">
                         <h3 class="pt-3 font-weight-bold">Login</h3>
                     </div>
                     <div class="panel-body p-3">
-                        <form action="{{ route('authenticate') }}" method="POST">
+                        <form action="{{ url('authenticate') }}" method="POST">
                             @csrf
                             <div class="form-group py-2">
                                 <div class="input-field"> 
@@ -30,7 +42,7 @@
                                 <a href="#" id="forgot" class="font-weight-bold">Forgot password?</a> 
                             </div>
                             <button type="submit" class="btn btn-primary btn-block mt-3">Let's GO</button>
-                            <div class="text-center pt-4 text-muted">Don't have an account? <a href="{{ route('register') }}">Sign up</a> </div>
+                            <div class="text-center pt-4 text-muted">Don't have an account? <a href="{{ url('register') }}">Sign up</a> </div>
                         </form>
                     </div>
                     <div class="mx-3 my-2 py-2 bordert">

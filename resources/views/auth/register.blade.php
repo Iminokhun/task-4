@@ -8,7 +8,7 @@
                         <h3 class="pt-3 font-weight-bold">Registration</h3>
                     </div>
                     <div class="panel-body p-3">
-                        <form action="{{ route('register.store') }}" method="POST">
+                        <form action="{{ url('register.store') }}" method="POST">
                             @csrf
                             <div class="form-group py-2">
                                 <div class="input-field"> 
@@ -36,7 +36,7 @@
                             </div>
                             <button type="submit" class="btn btn-primary btn-block mt-3">Let's GO</button>
                             <div class="text-center pt-4 text-muted">I have accaunt! 
-                                <a href="{{ route('login') }}">Login</a> 
+                                <a href="{{ url('login') }}">Login</a> 
                             </div>
                         </form>
                     </div>
