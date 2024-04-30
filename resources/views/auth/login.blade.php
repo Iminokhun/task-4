@@ -19,7 +19,7 @@
                         <h3 class="pt-3 font-weight-bold">Login</h3>
                     </div>
                     <div class="panel-body p-3">
-                        <form action="{{ url('authenticate') }}" method="POST">
+                        <form action="{{ route('authenticate') }}" method="POST">
                             @csrf
                             <div class="form-group py-2">
                                 <div class="input-field"> 
@@ -42,7 +42,7 @@
                                 <a href="#" id="forgot" class="font-weight-bold">Forgot password?</a> 
                             </div>
                             <button type="submit" class="btn btn-primary btn-block mt-3">Let's GO</button>
-                            <div class="text-center pt-4 text-muted">Don't have an account? <a href="{{ url('register') }}">Sign up</a> </div>
+                            <div class="text-center pt-4 text-muted">Don't have an account? <a href="{{ route('register') }}">Sign up</a> </div>
                         </form>
                     </div>
                     <div class="mx-3 my-2 py-2 bordert">

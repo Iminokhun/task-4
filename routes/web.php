@@ -20,5 +20,5 @@ Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('register', [AuthController::class, 'register'])->name('register');
-Route::post('register', [AuthController::class, 'register_store'])->name('register.store');
+Route::post('register.store', [AuthController::class, 'register_store'])->name('register.store');
 Route::post('/users/action', [UserController::class, 'action'])->name('users.action');
